@@ -7,15 +7,15 @@ export default function BrandCanvas() {
   const svgRef = useRef<SVGSVGElement>(null);
 
   const handleBgUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files) {
+    if (e.target.files && e.target.files[0]) {
       const reader = new FileReader();
       reader.onload = (event) => setCustomBg(event.target?.result as string);
-      reader.readAsDataURL(e.target.files);
+      reader.readAsDataURL(e.target.files[0]);
     }
   };
 
   const isDarkBackground = bgType === 'dark' || customBg !== null;
-  const scriptTextFill = isDarkBackground ? 'FFFFFF' : '343538';
+  const scriptTextFill = isDarkBackground ? '#FFFFFF' : '#343538';
 
   const downloadOptimizedSVG = () => {
     if (!svgRef.current) return;
@@ -48,9 +48,9 @@ export default function BrandCanvas() {
       <div 
         className="w-full h-80 rounded-xl relative flex items-center justify-center overflow-hidden border border-slate-200"
         style={{
-          backgroundColor: bgType === 'light' ? 'FFFFFF' : bgType === 'dark' ? '0A0A0C' : 'transparent',
+          backgroundColor: bgType === 'light' ? '#FFFFFF' : bgType === 'dark' ? '#0A0A0C' : 'transparent',
           backgroundImage: bgType === 'grid' 
-            ? 'linear-gradient(45deg, e2e8f0 25%, transparent 25%), linear-gradient(-45deg, e2e8f0 25%, transparent 25%), linear-gradient(45deg, transparent 75%, e2e8f0 75%), linear-gradient(-45deg, transparent 75%, e2e8f0 75%)' 
+            ? 'linear-gradient(45deg, #e2e8f0 25%, transparent 25%), linear-gradient(-45deg, #e2e8f0 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #e2e8f0 75%), linear-gradient(-45deg, transparent 75%, #e2e8f0 75%)' 
             : customBg ? `url(${customBg})` : 'none',
           backgroundSize: bgType === 'grid' ? '20px 20px' : 'cover',
           backgroundPosition: 'center'
@@ -58,25 +58,25 @@ export default function BrandCanvas() {
       >
         <svg 
           ref={svgRef}
-          xmlns="http://w3.org" 
+          xmlns="http://www.w3.org/2000/svg" 
           viewBox="0 0 500 450" 
           className="w-80 h-auto drop-shadow-md select-none"
         >
           <defs>
             <linearGradient id="phoenix-fire" x1="0%" y1="100%" x2="50%" y2="0%">
-              <stop offset="0%" stopColor="E32328" />
-              <stop offset="50%" stopColor="F26C21" />
-              <stop offset="100%" stopColor="FBC21C" />
+              <stop offset="0%" stopColor="#E32328" />
+              <stop offset="50%" stopColor="#F26C21" />
+              <stop offset="100%" stopColor="#FBC21C" />
             </linearGradient>
             <linearGradient id="cool-wings" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="692975" />
-              <stop offset="100%" stopColor="283891" />
+              <stop offset="0%" stopColor="#692975" />
+              <stop offset="100%" stopColor="#283891" />
             </linearGradient>
           </defs>
-          <path d="M150,180 Q210,80 230,130 Q250,50 290,120" fill="none" stroke="url(phoenix-fire)" strokeWidth="18" strokeLinecap="round" />
-          <path d="M220,150 Q280,220 320,190" fill="none" stroke="url(cool-wings)" strokeWidth="12" strokeLinecap="round" />
+          <path d="M150,180 Q210,80 230,130 Q250,50 290,120" fill="none" stroke="url(#phoenix-fire)" strokeWidth="18" strokeLinecap="round" />
+          <path d="M220,150 Q280,220 320,190" fill="none" stroke="url(#cool-wings)" strokeWidth="12" strokeLinecap="round" />
           <text x="50" y="320" fontFamily="Georgia, serif" fontSize="64" fontStyle="italic" fontWeight="bold" fill={scriptTextFill}>Fired Arts</text>
-          <text x="310" y="350" fontFamily="Arial, sans-serif" fontSize="20" letterSpacing="6" fontWeight="900" fill="C83E26">STUDIO</text>
+          <text x="310" y="350" fontFamily="Arial, sans-serif" fontSize="20" letterSpacing="6" fontWeight="900" fill="#C83E26">STUDIO</text>
         </svg>
 
         {customBg && (

@@ -1,17 +1,21 @@
 import type { Metadata } from "next";
 import "../app/globals.css";
+
 export const metadata: Metadata = {
-title: "Fired Arts Creative Dashboard",
-description: "Brand asset management engine",
+  title: "Fired Arts Creative Dashboard",
+  description: "Brand asset management engine",
 };
+
 export default function RootLayout({
-children,
+  children,
 }: Readonly<{
-children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-return (
-
-{children}
-
-);
+  return (
+    <html lang="en">
+      <body className="antialiased">
+        {children}
+      </body>
+    </html>
+  );
 }
