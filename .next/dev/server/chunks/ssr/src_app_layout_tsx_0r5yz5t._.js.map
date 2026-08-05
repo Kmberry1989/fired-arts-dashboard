@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/kyleberry/fired-arts-dashboard/src/app/layout.tsx"],"sourcesContent":["import type { Metadata } from \"next\";\nimport \"../app/globals.css\";\nexport const metadata: Metadata = {\ntitle: \"Fired Arts Creative Dashboard\",\ndescription: \"Brand asset management engine\",\n};\nexport default function RootLayout({\nchildren,\n}: Readonly<{\nchildren: React.ReactNode;\n}>) {\nreturn (\n\n{children}\n\n);\n}\n"],"names":["metadata","title","description","RootLayout","children"],"mappings":";;;;;;;AAEO,MAAMA,WAAqB;IAClCC,OAAO;IACPC,aAAa;AACb;AACe,SAASC,WAAW,EACnCC,QAAQ,EAGN;IACF,OAEA;QAACA;IAAQ;AAGT"}}]
+}

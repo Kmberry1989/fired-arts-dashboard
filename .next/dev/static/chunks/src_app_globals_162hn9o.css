@@ -1,0 +1,10 @@
+/* [project]/src/app/globals.css [app-client] (css) */
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+@apply bg-slate-50 text-slate-900 antialiased;
+
+/*# sourceMappingURL=src_app_globals_162hn9o.css.map*/
