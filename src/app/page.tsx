@@ -1,4 +1,5 @@
 'use client';
+// Trigger build verification
 import React from 'react';
 import BrandCanvas from '../components/BrandCanvas';
 import PaletteExporter from '../components/PaletteExporter';
